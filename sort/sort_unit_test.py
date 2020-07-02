@@ -60,6 +60,25 @@ class SortTester(unittest.TestCase):
             self.assertEqual(sorted(case, reverse=True), sorted_case)
         print('-'*100)
 
+    def test_merge_sort(self):
+        """Testing Insertion Sort"""
+        print("Testing Ascending Sort")
+        print('-'*100)
+        for case in self.test_cases:
+            print(f'Unsorted Array: {case}')
+            sorted_case = sort.merge_sort(case)
+            print(f'Sorted Array {sorted_case}')
+            self.assertEqual(sorted(case), sorted_case)
+
+        print('-'*100)
+        print("Testing Decending Sort")
+        for case in self.test_cases:
+            print(f'Unsorted Array: {case}')
+            sorted_case = sort.merge_sort(case, reverse=True)
+            print(f'Sorted Array {sorted_case}')
+            self.assertEqual(sorted(case, reverse=True), sorted_case)
+        print('-'*100)
+
 
 if __name__ == '__main__':
     unittest.main()
